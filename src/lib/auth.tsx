@@ -10,7 +10,6 @@ import { api } from './api-client';
 // these are not part of features as this is a module shared across features
 
 const getUser = (): Promise<User> => {
-  console.log('api.get-auth-me', api.get('/auth/me'))
   return api.get('/auth/me');
 };
 

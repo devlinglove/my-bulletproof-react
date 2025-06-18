@@ -14,6 +14,10 @@ type AppProviderProps = {
   children: React.ReactNode;
 };
 
+export const ErrorAuthBoundary = () => {
+  return <div>Something went wrong!</div>;
+};
+
 export const AppProvider = ({ children }: AppProviderProps) => {
   return (
     <React.Suspense
@@ -34,6 +38,7 @@ export const AppProvider = ({ children }: AppProviderProps) => {
                   <Spinner size="xl" />
                 </div>
               )}
+              renderError={ErrorAuthBoundary}
             >
               {children}
             </AuthLoader>
